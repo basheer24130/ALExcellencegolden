@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-Excellence Golden | Chinese Universities Education Consultancy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #0A2463;
+            --primary-dark: #061A40;
+            --secondary: #3E92CC;
+            --accent: #D4AF37;
+            --accent-light: #F5D76E;
+            --light: #F8FAFC;
+            --white: #FFFFFF;
+            --dark: #1E293B;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-500: #64748B;
+            --gray-700: #334155;
+            
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, #60A5FA 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(10, 36, 99, 0.95) 0%, rgba(62, 146, 204, 0.9) 100%);
+            
+            --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+            --border-radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition-normal);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition-normal);
+        }
+
+        .nav-link:hover {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-bounce);
+            cursor: pointer;
+            gap: 0.5rem;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .btn-accent {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-hero);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(62, 146, 204, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Floating Contact Buttons */
+        .floating-contact {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .contact-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .phone-btn {
+            background: var(--primary);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .email-btn {
+            background: var(--accent);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Programs Section */
+        .programs-table {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .programs-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .programs-table th {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .programs-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .programs-table tr:hover {
+            background: var(--gray-100);
+        }
+
+        /* Scholarship Tiers */
+        .scholarship-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .tier-header {
+            padding: 2rem;
+            text-align: center;
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .tier-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-percentage {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .tier-body {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Requirements Section */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .requirement-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-500);
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .programs-table {
+                overflow-x: auto;
+            }
+        }
+
+        /* Future Enhancements Section */
+        .enhancements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .enhancement-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+            border-top: 4px solid var(--accent);
+        }
+
+        .enhancement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .enhancement-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span>AL-Excellence Golden</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#programs" class="nav-link">Programs</a></li>
+                    <li><a href="#scholarships" class="nav-link">Scholarships</a></li>
+                    <li><a href="#requirements" class="nav-link">Requirements</a></li>
+                    <li><a href="#enhancements" class="nav-link">Future Plans</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+        <a href="tel:+8613186151353" class="contact-btn phone-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://wa.me/8613186151353" class="contact-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:Alexcellencegolden@qq.com" class="contact-btn email-btn">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Gateway to Chinese Universities</h1>
+                    <p>Premium education consulting services helping international students achieve their academic dreams in China's top Universities.</p>
+                    <div class="hero-buttons">
+                        <a href="#programs" class="btn btn-accent">Explore Programs</a>
+                        <a href="https://wa.me/8613186151353" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 1rem; text-align: center;">
+                        <i class="fas fa-university" style="font-size: 8rem; color: var(--accent-light); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--white); margin-bottom: 1rem;">Top Chinese Universities</h3>
+                        <p style="color: rgba(255,255,255,0.8);">World-class education with global recognition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Programs</h2>
+                <p class="section-subtitle">Explore our partner institutions and their most popular programs for international students</p>
+            </div>
+            <div class="programs-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Institution Category</th>
+                            <th>Program Category</th>
+                            <th>Duration</th>
+                            <th>Language</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Top-Ranked Comprehensive</td>
+                            <td>Technology & Engineering</td>
+                            <td>4 Years</td>
+                            <td>English/Chinese</td>
+                        </tr>
+                        <tr>
+                            <td>Leading Business School</td>
+                            <td>International Business</td>
+                            <td>4 Years</td>
+                            <td>English</td>
+                        </tr>
+                        <tr>
+                            <td>Prestigious Medical</td>
+                            <td>Health Sciences</td>
+                            <td>6 Years</td>
+                            <td>English</td>
+                        </tr>
+                        <tr>
+                            <td>Research-Focused</td>
+                            <td>Engineering Sciences</td>
+                            <td>4 Years</td>
+                            <td>English/Chinese</td>
+                        </tr>
+                        <tr>
+                            <td>Technical University</td>
+                            <td>Applied Engineering</td>
+                            <td>4 Years</td>
+                            <td>English</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships Section -->
+    <section id="scholarships" class="section" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Scholarship Opportunities</h2>
+                <p class="section-subtitle">We help students secure various scholarship levels based on academic performance</p>
+            </div>
+            <div class="scholarship-tiers">
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <h3 class="tier-title">Level 1</h3>
+                        <div class="tier-percentage">10-30%</div>
+                    </div>
+                    <div class="tier-body">
+                        <ul style="text-align: left; list-style: none; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Good academic standing</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i>  language proficiency</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Personal Statement</li>
+                        </ul>
+                        <a href="https://wa.me/8613186151353" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Apply Now
+                        </a>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <h3 class="tier-title">Level 2</h3>
+                        <div class="tier-percentage">30-50%</div>
+                    </div>
+                    <div class="tier-body">
+                        <ul style="text-align: left; list-style: none; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Strong academic record</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> language proficiency</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Recommendation Letters</li>
+                        </ul>
+                        <a href="tel:+8613186151353" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call to Apply
+                        </a>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <h3 class="tier-title">Level 3</h3>
+                        <div class="tier-percentage">50-100%</div>
+                    </div>
+                    <div class="tier-body">
+                        <ul style="text-align: left; list-style: none; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Outstanding academic achievement</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> language proficiency</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Demonstrated leadership</li>
+                        </ul>
+                        <a href="mailto:Alexcellencegolden@qq.com" class="btn btn-accent">
+                            <i class="fas fa-envelope"></i> Email to Apply
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Application Requirements</h2>
+                <p class="section-subtitle">Everything you need to prepare for your university application</p>
+            </div>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Passport Copy</h3>
+                    <p>Valid passport with at least 1 year remaining validity</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Academic Records</h3>
+                    <p>High school diploma and transcripts (notarized)</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Language Proficiency</h3>
+                    <p>Standardized language test results</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Personal Statement</h3>
+                    <p>500-1000 words explaining your academic goals</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Recommendation Letters</h3>
+                    <p>2 letters from teachers or academic advisors</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health Certificate</h3>
+                    <p>Medical examination report for foreign students</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Enhancements Section -->
+    <section id="enhancements" class="section" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Future Enhancements</h2>
+                <p class="section-subtitle">Exciting developments coming soon to enhance your experience</p>
+            </div>
+            <div class="enhancements-grid">
+                <div class="enhancement-card">
+                    <div class="enhancement-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Student Portal</h3>
+                    <p>Track your application progress, documents, and communications in one secure platform.</p>
+                </div>
+                <div class="enhancement-card">
+                    <div class="enhancement-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Live Chat Support</h3>
+                    <p>Instant messaging with our consultants for real-time assistance.</p>
+                </div>
+                <div class="enhancement-card">
+                    <div class="enhancement-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Virtual Campus Tours</h3>
+                    <p>360° immersive experiences of partner universities before you apply.</p>
+                </div>
+                <div class="enhancement-card">
+                    <div class="enhancement-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Document Upload System</h3>
+                    <p>Securely submit all required documents through our platform.</p>
+                </div>
+                <div class="enhancement-card">
+                    <div class="enhancement-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Application Tracker</h3>
+                    <p>Real-time updates on your application status and next steps.</p>
+                </div>
+                <div class="enhancement-card">
+                    <div class="enhancement-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3>Alumni Network</h3>
+                    <p>Connect with  students who can share their experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about studying in China</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What are the tuition fees for international students?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tuition fees vary by institution and program, but generally range from $2,000 to $10,000 per year for undergraduate programs. Medical programs tend to be at the higher end of this range.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need to know Chinese to study in China?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Many universities offer programs taught entirely in English, particularly in STEM and business fields. However, learning basic Chinese is highly recommended for daily life. Some programs may require HSK certification for Chinese-taught programs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        When should I start my application?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We recommend starting the application process 9-12 months before your intended start date. Most universities have application deadlines between February and June for September intake.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the cost of living in China?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cost of living varies by city. In smaller cities, you can live comfortably on $100-$250 per month, while in cities like Beijing or Shanghai, you may need $300-$400 per month including accommodation, food, and transportation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I work while studying in China?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>International students can't work .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch to start your educational journey in China</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="program">Program of Interest</label>
+                            <input type="text" id="program" name="program">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Call Us Directly</h3>
+                            <p><a href="tel:+8613186151353" style="color: var(--primary); text-decoration: none;">+86 131 8615 1353</a></p>
+                            <p>Available 9:00 AM - 6:00 PM (GMT+8)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/8613186151353" style="color: var(--primary); text-decoration: none;">Chat on WhatsApp</a></p>
+                            <p>24/7 support with quick responses</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:Alexcellencegolden@qq.com" style="color: var(--primary); text-decoration: none;">Alexcellencegolden@qq.com</a></p>
+                            <p>Typically respond within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Our Office</h3>
+                            <p> Shaanxi province / Xi'an</p>
+                            <p>Yanta District</p>
+                            <p>China</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AL-Excellence Golden</h3>
+                    <p>Your trusted partner for Chinese university admissions since 2010. We've helped over 1,000 students achieve their academic dreams in China.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://wa.me/8613186151353" style="color: var(--white); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+8613186151353" style="color: var(--white); font-size: 1.5rem;"><i class="fas fa-phone"></i></a>
+                        <a href="mailto:Alexcellencegolden@qq.com" style="color: var(--white); font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#programs">Programs</a>
+                    <a href="#scholarships">Scholarships</a>
+                    <a href="#requirements">Requirements</a>
+                    <a href="#enhancements">Future Plans</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Program Categories</h3>
+                    <a href="#">Technology & Engineering</a>
+                    <a href="#">Business & Economics</a>
+                    <a href="#">Health Sciences</a>
+                    <a href="#">Arts & Humanities</a>
+                    <a href="#">Natural Sciences</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> <a href="tel:+8613186151353" style="color: var(--white);">+86 131 8615 1353</a></p>
+                    <p><i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i> <a href="https://wa.me/8613186151353" style="color: var(--white);">WhatsApp Chat</a></p>
+                    <p><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> <a href="mailto:Alexcellencegolden@qq.com" style="color: var(--white);">Alexcellencegolden@qq.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AL-Excellence Golden Education Consultancy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                if (answer.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry! We will contact you shortly.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Track which section is in view for active nav styling
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
