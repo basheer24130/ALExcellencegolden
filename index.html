@@ -590,47 +590,108 @@
             color: var(--primary);
         }
 
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.9));
-            text-align: center;
+        /* Contact Section */
+        .contact {
+            background: rgba(10, 25, 47, 0.7);
             position: relative;
-            overflow: hidden;
         }
 
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, transparent 70%);
-            z-index: -1;
-            animation: rotate 20s linear infinite;
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .contact-info {
+            padding: 30px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
         }
 
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
 
-        .cta-title {
-            font-size: 2.5rem;
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .form-group {
             margin-bottom: 20px;
         }
 
-        .cta-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 40px;
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(10, 25, 47, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(10, 25, 47, 0.5);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
 
         /* Footer */
@@ -744,6 +805,100 @@
             font-size: 0.9rem;
         }
 
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Application Section */
+        .application {
+            position: relative;
+        }
+
+        .application-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .step-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: var(--text-light);
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 2000;
+            transform: translateX(150%);
+            transition: transform 0.5s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-content {
@@ -762,6 +917,10 @@
 
             .university-image, .university-content {
                 width: 100%;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -801,6 +960,14 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
         }
 
         /* Animations */
@@ -812,11 +979,27 @@
         .floating {
             animation: float 6s ease-in-out infinite;
         }
+
+        /* Active Section Highlight */
+        .highlight {
+            position: absolute;
+            background: var(--accent);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease, left 0.3s ease;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
     <!-- Particle Background -->
     <div id="particles-js"></div>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8613186151353" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     
     <!-- Header -->
     <header>
@@ -834,10 +1017,11 @@
                     <li><a href="#features" class="nav-link">Services</a></li>
                     <li><a href="#requirements" class="nav-link">Requirements</a></li>
                     <li><a href="#universities" class="nav-link">Universities</a></li>
+                    <li><a href="#application" class="nav-link">Application</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 
-                <button class="cta-button">
+                <button class="cta-button" onclick="scrollToSection('application')">
                     <i class="fas fa-user-graduate"></i> Apply Now
                 </button>
             </nav>
@@ -845,6 +1029,7 @@
             <button class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
+            <div class="highlight"></div>
         </div>
     </header>
 
@@ -856,12 +1041,12 @@
                 <p class="hero-subtitle">Access world-class Chinese universities through our premium consultancy services. We guide exceptional students to prestigious academic programs.</p>
                 
                 <div class="hero-buttons">
-                    <button class="cta-button" onclick="document.querySelector('#universities').scrollIntoView({ behavior: 'smooth' })">
+                    <button class="cta-button" onclick="scrollToSection('universities')">
                         <i class="fas fa-university"></i> View Universities
                     </button>
                     
-                    <button class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">
-                        <i class="fas fa-play-circle"></i> Watch Video
+                    <button class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);" onclick="scrollToSection('contact')">
+                        <i class="fas fa-comments"></i> Contact Us
                     </button>
                 </div>
             </div>
@@ -979,7 +1164,7 @@
                     <h3 class="requirement-title">Recommendation Letters</h3>
                     <p class="requirement-details">Strong recommendation letters enhance your application.</p>
                     <ul class="requirement-list">
-                        <li>2-3 letters required for most programs</li>
+                        <li>2 letters required for most programs</li>
                         <li>From professors or employers familiar with your work</li>
                         <li>On official letterhead with signature</li>
                         <li>Must be recent (within 6 months)</li>
@@ -990,12 +1175,12 @@
                     <div class="requirement-icon">
                         <i class="fas fa-language"></i>
                     </div>
-                    <h3 class="requirement-title">English Proficiency</h3>
-                    <p class="requirement-details">Proof of English language proficiency is required for English-taught programs.</p>
+                    <h3 class="requirement-title">Language Proficiency</h3>
+                    <p class="requirement-details">Proof of English or Chinese language proficiency depending on program requirements.</p>
                     <ul class="requirement-list">
                         <li>TOEFL (minimum 80 iBT)</li>
                         <li>IELTS (minimum 6.0 overall)</li>
-                        <li>PTE Academic (minimum 55)</li>
+                        <li>Chinese HSK4 and above</li>
                         <li>Some universities accept Duolingo English Test</li>
                     </ul>
                 </div>
@@ -1027,7 +1212,7 @@
             
             <div class="university-list">
                 <div class="university-item-detailed">
-                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chinese-architects.com%2Fde%2Fprojects%2Fview%2Faffiliated-high-school-of-peking-university-haikou-campus&psig=AOvVaw2nWNbFTypVl5Z4ybr1eUa3&ust=1755217520021000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJD25PyEiY8DFQAAAAAdAAAAABAV" alt="Peking University" class="university-image">
+                    <img src="https://i.postimg.cc/HxDg0vfz/D0e-Cuod-U8-AA-WC1.jpg" alt="Peking University" class="university-image">
                     <div class="university-content">
                         <h3 class="university-name">Peking University</h3>
                         <p class="university-description">China's oldest university with prestigious programs in humanities, sciences, and business. Known for its beautiful historic campus and rigorous academic environment.</p>
@@ -1059,7 +1244,7 @@
                             </div>
                         </div>
                         
-                        <button class="cta-button">
+                        <button class="cta-button" onclick="window.open('https://english.pku.edu.cn/', '_blank')">
                             <i class="fas fa-info-circle"></i> View Programs
                         </button>
                     </div>
@@ -1098,14 +1283,14 @@
                             </div>
                         </div>
                         
-                        <button class="cta-button">
+                        <button class="cta-button" onclick="window.open('https://www.tsinghua.edu.cn/en/', '_blank')">
                             <i class="fas fa-info-circle"></i> View Programs
                         </button>
                     </div>
                 </div>
                 
                 <div class="university-item-detailed">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fudan University" class="university-image">
+                    <img src="https://i.postimg.cc/YC8cLq3p/2c3948bb-9fd9-45d1-8e93-ea199b75990c.png" alt="Fudan University" class="university-image">
                     <div class="university-content">
                         <h3 class="university-name">Fudan University</h3>
                         <p class="university-description">Leading comprehensive university in Shanghai with strong international programs and research opportunities. Known for its vibrant campus life and global partnerships.</p>
@@ -1137,11 +1322,154 @@
                             </div>
                         </div>
                         
-                        <button class="cta-button">
+                        <button class="cta-button" onclick="window.open('https://www.fudan.edu.cn/en/', '_blank')">
                             <i class="fas fa-info-circle"></i> View Programs
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section id="application" class="application">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Application Process</h2>
+                <p class="section-subtitle">Our streamlined process makes applying to Chinese universities simple and efficient</p>
+            </div>
+            
+            <div class="application-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Initial Consultation</h3>
+                    <p class="step-description">Discuss your academic goals and preferences with our expert advisors.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">University Selection</h3>
+                    <p class="step-description">We match you with the best universities based on your profile and goals.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Document Preparation</h3>
+                    <p class="step-description">We help you prepare all required documents and application materials.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Application Submission</h3>
+                    <p class="step-description">We submit your application to selected universities and track progress.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Interview Preparation</h3>
+                    <p class="step-description">We prepare you for university interviews with mock sessions and feedback.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Visa Assistance</h3>
+                    <p class="step-description">We guide you through the visa application process with 98% success rate.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="cta-button" onclick="openWhatsApp()">
+                    <i class="fas fa-paper-plane"></i> Start Your Application
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="contact-title">Get In Touch</h2>
+                <p>Have questions about studying in China? Our expert advisors are ready to help you achieve your academic dreams.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+86 131 8615 1353</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>+86 131 8615 1353</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>qaid87190@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Xi'an, China</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="https://www.facebook.com/bookmarks/"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3 class="form-title">Send Us a Message</h3>
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="program" required>
+                            <option value="" disabled selected>Interested Program</option>
+                            <option>Undergraduate</option>
+                            <option>Graduate</option>
+                            <option>PhD</option>
+                            <option>Language Program</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -1153,7 +1481,7 @@
                 <h2 class="cta-title">Begin Your Academic Journey</h2>
                 <p class="cta-subtitle">Join thousands of successful students who transformed their futures through our consultancy services</p>
                 
-                <button class="cta-button" style="font-size: 1.2rem; padding: 15px 40px;">
+                <button class="cta-button" style="font-size: 1.2rem; padding: 15px 40px;" onclick="openWhatsApp()">
                     <i class="fas fa-user-graduate"></i> Start Application
                 </button>
             </div>
@@ -1161,7 +1489,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
@@ -1219,7 +1547,7 @@
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div>Alexcellencegolden@qq.com</div>
+                            <div>qaid87190@gmail.com</div>
                         </div>
                         
                         <div class="contact-item">
@@ -1237,6 +1565,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Message sent successfully!</span>
+    </div>
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -1313,6 +1647,78 @@
         
         document.querySelectorAll('.feature-card, .university-card, .stat-item').forEach(el => {
             observer.observe(el);
+        });
+        
+        // Highlight active navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const highlight = document.querySelector('.highlight');
+        
+        function setActiveLink() {
+            let index = sections.length;
+            
+            while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+            
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+            
+            // Update highlight position
+            if (navLinks[index]) {
+                const linkRect = navLinks[index].getBoundingClientRect();
+                const navRect = document.querySelector('nav').getBoundingClientRect();
+                
+                highlight.style.width = `${linkRect.width}px`;
+                highlight.style.left = `${linkRect.left - navRect.left}px`;
+            }
+        }
+        
+        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('resize', setActiveLink);
+        setActiveLink();
+        
+        // WhatsApp function
+        function openWhatsApp() {
+            const phone = '8613186151353';
+            const message = 'Hello AL-Excellence Golden, I am interested in your consultancy services.';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Form submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send this data to your server
+            // which would then forward it to your email address
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                program: document.getElementById('program').value,
+                message: document.getElementById('message').value
+            };
+            
+            // For demonstration purposes, we'll just log to console
+            console.log('Form submitted:', formData);
+            
+            // Show notification
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
         });
     </script>
 </body>
